@@ -40,9 +40,10 @@
       margin: 0 auto;
       padding: 14px 22px;
       display: flex;
-      align-items: center;
+      align-items: flex-start; /* align top for multi-line */
       justify-content: space-between;
       gap: 20px;
+      flex-wrap: wrap; /* allow nav to wrap below */
     }
 
     .brand {
@@ -86,8 +87,9 @@
       display: flex;
       align-items: center;
       gap: 6px;
-      overflow-x: auto;
-      white-space: nowrap;
+      flex-wrap: wrap; /* allow wrapping to second line */
+      white-space: normal; /* remove horizontal scrolling */
+      max-width: 800px;
     }
 
     .nav-links a {
@@ -95,8 +97,9 @@
       text-decoration: none;
       font-weight: 800;
       font-size: 0.88rem;
-      padding: 10px 12px;
+      padding: 8px 10px;
       border-radius: 999px;
+      margin-bottom: 4px; /* spacing between rows */
     }
 
     .nav-links a:hover { background: rgba(79,140,255,0.18); color: #ffffff; }
