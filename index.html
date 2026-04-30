@@ -121,7 +121,9 @@
 
     header {
       color: white;
-      background: linear-gradient(135deg, #061122 0%, #071b36 48%, #102b55 100%);
+      background:
+        linear-gradient(90deg, rgba(7,18,38,0.98) 0%, rgba(7,18,38,0.92) 42%, rgba(7,18,38,0.45) 72%, rgba(7,18,38,0.22) 100%),
+        url('portfolio-hero.jpg') center right / cover no-repeat;
       min-height: 680px;
       display: flex;
       align-items: stretch;
@@ -134,7 +136,7 @@
       margin: 0 auto;
       width: 100%;
       display: grid;
-      grid-template-columns: 1fr 1.05fr;
+      grid-template-columns: 1fr;
       align-items: stretch;
     }
 
@@ -146,19 +148,10 @@
     }
 
     .hero-image-wrap {
-      position: relative;
-      min-height: 680px;
-      overflow: hidden;
+      display: none;
     }
 
-    .hero-image-wrap::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(90deg, #071226 0%, rgba(7,18,38,0.72) 18%, rgba(7,18,38,0.18) 52%, rgba(7,18,38,0.05) 100%);
-      z-index: 1;
-      pointer-events: none;
-    }
+    .hero-image-wrap::before { display: none; }
 
     .hero-image {
       width: 100%;
@@ -590,7 +583,7 @@
     <section id="overview">
       <h2>Portfolio Overview</h2>
       <p class="section-intro">
-        This portfolio is organized around Saskatchewan Polytechnic’s instructor competency areas. Each section includes a statement of practice, evidence or artifacts, reflection, and placeholders for additional documentation.
+        This portfolio is organized around Saskatchewan Polytechnic’s instructor competency areas. Each section includes a statement of practice, evidence, reflection, and placeholders for additional documentation.
       </p>
       <div class="card-grid">
         <div class="mini-card"><strong>Hands-On Learning</strong>Students learn by building, testing, measuring, and troubleshooting real systems.</div>
@@ -689,6 +682,25 @@
             <li>Scaffolding</li>
             <li>Hands-On Labs</li>
           </ul>
+
+          <h3>Documents</h3>
+          <div class="doc-section">
+            <details class="doc-dropdown">
+              <summary>Formative Assessment Strategy – Microprocessor Role-Play</summary>
+              <p>Hands-on learning strategy demonstrating active learning, role-play, and system-level understanding.</p>
+              <a href="Analyze%20Your%20Own%20Formative%20Assessment%20Experience.docx" target="_blank">Open Word Document</a>
+            </details>
+            <details class="doc-dropdown">
+              <summary>Assignment Revision – “How to Stay Dry”</summary>
+              <p>Supports instructional clarity, sequencing, scaffolding, and accessible assignment design.</p>
+              <a href="Assignment%20Revising%20Instructions(1).docx" target="_blank">Open Word Document</a>
+            </details>
+            <details class="doc-dropdown">
+              <summary>Applying Universal Design for Learning</summary>
+              <p>Shows multimodal, student-centred instruction and engagement design.</p>
+              <a href="Applying%20Universal%20Design%20for%20Learning(1).docx" target="_blank">Open Word Document</a>
+            </details>
+          </div>
         </div>
         <div class="reflection-box">
           <h3>Reflection</h3>
@@ -696,25 +708,6 @@
             Hands-on, role-based instruction helps students make abstract concepts visible. When students physically model system interactions, they are often better able to explain how components work together and why those interactions matter.
           </p>
         </div>
-      </div>
-
-      <h3>Supporting Evidence</h3>
-      <div class="doc-section">
-        <details class="doc-dropdown">
-          <summary>Formative Assessment Strategy – Microprocessor Role-Play</summary>
-          <p>Hands-on learning strategy demonstrating active learning, role-play, and system-level understanding.</p>
-          <a href="Analyze%20Your%20Own%20Formative%20Assessment%20Experience.docx" target="_blank">Open Word Document</a>
-        </details>
-        <details class="doc-dropdown">
-          <summary>Assignment Revision – “How to Stay Dry”</summary>
-          <p>Supports instructional clarity, sequencing, scaffolding, and accessible assignment design.</p>
-          <a href="Assignment%20Revising%20Instructions(1).docx" target="_blank">Open Word Document</a>
-        </details>
-        <details class="doc-dropdown">
-          <summary>Applying Universal Design for Learning</summary>
-          <p>Shows multimodal, student-centred instruction and engagement design.</p>
-          <a href="Applying%20Universal%20Design%20for%20Learning(1).docx" target="_blank">Open Word Document</a>
-        </details>
       </div>
     </section>
 
@@ -736,6 +729,25 @@
             <li>Outcome Alignment</li>
             <li>Feedback</li>
           </ul>
+
+          <h3>Documents</h3>
+          <div class="doc-section">
+            <details class="doc-dropdown">
+              <summary>Multiple-Choice Assessment Design</summary>
+              <p>Evidence for designing valid, clear, aligned, and fair assessment items based on foundational electrical theory.</p>
+              <a href="Alignment%20with%20Multiple-Choice%20Test%20Guidelines(1).docx" target="_blank">Open Word Document</a>
+            </details>
+            <details class="doc-dropdown">
+              <summary>Formative Assessment Strategy – Microprocessor Role-Play</summary>
+              <p>Evidence for observing learner understanding and using formative assessment during active learning.</p>
+              <a href="Analyze%20Your%20Own%20Formative%20Assessment%20Experience.docx" target="_blank">Open Word Document</a>
+            </details>
+            <details class="doc-dropdown">
+              <summary>Assignment Revision – “How to Stay Dry”</summary>
+              <p>Evidence for process-focused assessment and reflection-based troubleshooting.</p>
+              <a href="Assignment%20Revising%20Instructions(1).docx" target="_blank">Open Word Document</a>
+            </details>
+          </div>
         </div>
         <div class="reflection-box">
           <h3>Reflection</h3>
@@ -743,25 +755,6 @@
             Combining formative observation with structured reflection provides a fuller picture of student learning. Students often show deeper understanding through explanation, process documentation, and troubleshooting than through final answers alone.
           </p>
         </div>
-      </div>
-
-      <h3>Supporting Evidence</h3>
-      <div class="doc-section">
-        <details class="doc-dropdown">
-          <summary>Multiple-Choice Assessment Design</summary>
-          <p>Evidence for designing valid, clear, aligned, and fair assessment items based on foundational electrical theory.</p>
-          <a href="Alignment%20with%20Multiple-Choice%20Test%20Guidelines(1).docx" target="_blank">Open Word Document</a>
-        </details>
-        <details class="doc-dropdown">
-          <summary>Formative Assessment Strategy – Microprocessor Role-Play</summary>
-          <p>Evidence for observing learner understanding and using formative assessment during active learning.</p>
-          <a href="Analyze%20Your%20Own%20Formative%20Assessment%20Experience.docx" target="_blank">Open Word Document</a>
-        </details>
-        <details class="doc-dropdown">
-          <summary>Assignment Revision – “How to Stay Dry”</summary>
-          <p>Evidence for process-focused assessment and reflection-based troubleshooting.</p>
-          <a href="Assignment%20Revising%20Instructions(1).docx" target="_blank">Open Word Document</a>
-        </details>
       </div>
     </section>
 
@@ -783,6 +776,20 @@
             <li>Accessibility</li>
             <li>Learner Variability</li>
           </ul>
+
+          <h3>Documents</h3>
+          <div class="doc-section">
+            <details class="doc-dropdown">
+              <summary>Applying Universal Design for Learning</summary>
+              <p>Primary evidence for UDL, engagement, accessibility, adult learner support, and reducing barriers.</p>
+              <a href="Applying%20Universal%20Design%20for%20Learning(1).docx" target="_blank">Open Word Document</a>
+            </details>
+            <details class="doc-dropdown">
+              <summary>Learning Technology Review – PhET</summary>
+              <p>Evidence for accessible and equitable technology selection.</p>
+              <a href="Learning%20Technology%20Review(1).docx" target="_blank">Open Word Document</a>
+            </details>
+          </div>
         </div>
         <div class="reflection-box">
           <h3>Reflection</h3>
@@ -790,20 +797,6 @@
             Implementing UDL has helped reduce anxiety and improve engagement, especially for adult learners returning to school. By using multiple channels for learning, I can reduce “noise” in the learning environment and improve student confidence.
           </p>
         </div>
-      </div>
-
-      <h3>Supporting Evidence</h3>
-      <div class="doc-section">
-        <details class="doc-dropdown">
-          <summary>Applying Universal Design for Learning</summary>
-          <p>Primary evidence for UDL, engagement, accessibility, adult learner support, and reducing barriers.</p>
-          <a href="Applying%20Universal%20Design%20for%20Learning(1).docx" target="_blank">Open Word Document</a>
-        </details>
-        <details class="doc-dropdown">
-          <summary>Learning Technology Review – PhET</summary>
-          <p>Evidence for accessible and equitable technology selection.</p>
-          <a href="Learning%20Technology%20Review(1).docx" target="_blank">Open Word Document</a>
-        </details>
       </div>
 
       <div class="placeholder-box">
@@ -829,6 +822,15 @@
             <li>Reflection</li>
             <li>Reconciliation</li>
           </ul>
+
+          <h3>Documents</h3>
+          <div class="doc-section">
+            <details class="doc-dropdown">
+              <summary>Final Reflection – Indigenization and Teaching Practice</summary>
+              <p>Primary evidence for reflection on Indigenous perspectives, storytelling, community connection, and ongoing reconciliation learning.</p>
+              <a href="Final%20Reflection_MatthewBespalko(1).docx" target="_blank">Open Word Document</a>
+            </details>
+          </div>
         </div>
         <div class="reflection-box">
           <h3>Reflection</h3>
@@ -836,15 +838,6 @@
             Reflecting on Indigenous approaches to education has helped me recognize that storytelling can be more than a way to explain concepts. It can create connection, context, and meaning while supporting a more relational learning environment.
           </p>
         </div>
-      </div>
-
-      <h3>Supporting Evidence</h3>
-      <div class="doc-section">
-        <details class="doc-dropdown">
-          <summary>Final Reflection – Indigenization and Teaching Practice</summary>
-          <p>Primary evidence for reflection on Indigenous perspectives, storytelling, community connection, and ongoing reconciliation learning.</p>
-          <a href="Final%20Reflection_MatthewBespalko(1).docx" target="_blank">Open Word Document</a>
-        </details>
       </div>
     </section>
 
@@ -866,6 +859,20 @@
             <li>Scaffolding</li>
             <li>Alignment</li>
           </ul>
+
+          <h3>Documents</h3>
+          <div class="doc-section">
+            <details class="doc-dropdown">
+              <summary>Assignment Revision – “How to Stay Dry”</summary>
+              <p>Primary evidence for curriculum design, scaffolding, clear instructions, and alignment to troubleshooting outcomes.</p>
+              <a href="Assignment%20Revising%20Instructions(1).docx" target="_blank">Open Word Document</a>
+            </details>
+            <details class="doc-dropdown">
+              <summary>Multiple-Choice Assessment Design</summary>
+              <p>Evidence for aligning assessment items with learning outcomes and foundational electrical concepts.</p>
+              <a href="Alignment%20with%20Multiple-Choice%20Test%20Guidelines(1).docx" target="_blank">Open Word Document</a>
+            </details>
+          </div>
         </div>
         <div class="reflection-box">
           <h3>Reflection</h3>
@@ -873,20 +880,6 @@
             Clear curriculum design reduces uncertainty and cognitive load. When learning activities are sequenced carefully, students can focus on the technical thinking rather than trying to decode unclear instructions.
           </p>
         </div>
-      </div>
-
-      <h3>Supporting Evidence</h3>
-      <div class="doc-section">
-        <details class="doc-dropdown">
-          <summary>Assignment Revision – “How to Stay Dry”</summary>
-          <p>Primary evidence for curriculum design, scaffolding, clear instructions, and alignment to troubleshooting outcomes.</p>
-          <a href="Assignment%20Revising%20Instructions(1).docx" target="_blank">Open Word Document</a>
-        </details>
-        <details class="doc-dropdown">
-          <summary>Multiple-Choice Assessment Design</summary>
-          <p>Evidence for aligning assessment items with learning outcomes and foundational electrical concepts.</p>
-          <a href="Alignment%20with%20Multiple-Choice%20Test%20Guidelines(1).docx" target="_blank">Open Word Document</a>
-        </details>
       </div>
     </section>
 
@@ -908,6 +901,20 @@
             <li>Accessibility</li>
             <li>EdTech</li>
           </ul>
+
+          <h3>Documents</h3>
+          <div class="doc-section">
+            <details class="doc-dropdown">
+              <summary>Learning Technology Review – PhET Interactive Simulations</summary>
+              <p>Primary evidence for evaluating educational technology, accessibility, privacy, equity, and classroom use.</p>
+              <a href="Learning%20Technology%20Review(1).docx" target="_blank">Open Word Document</a>
+            </details>
+            <details class="doc-dropdown">
+              <summary>Formative Assessment Strategy – Microprocessor Role-Play</summary>
+              <p>Evidence for applied technical learning and visualization of microprocessor systems.</p>
+              <a href="Analyze%20Your%20Own%20Formative%20Assessment%20Experience.docx" target="_blank">Open Word Document</a>
+            </details>
+          </div>
         </div>
         <div class="reflection-box">
           <h3>Reflection</h3>
@@ -915,20 +922,6 @@
             Technology can make abstract concepts more visible and interactive. At the same time, I must evaluate tools for accessibility, equity, safety, privacy, and alignment with learning outcomes.
           </p>
         </div>
-      </div>
-
-      <h3>Supporting Evidence</h3>
-      <div class="doc-section">
-        <details class="doc-dropdown">
-          <summary>Learning Technology Review – PhET Interactive Simulations</summary>
-          <p>Primary evidence for evaluating educational technology, accessibility, privacy, equity, and classroom use.</p>
-          <a href="Learning%20Technology%20Review(1).docx" target="_blank">Open Word Document</a>
-        </details>
-        <details class="doc-dropdown">
-          <summary>Formative Assessment Strategy – Microprocessor Role-Play</summary>
-          <p>Evidence for applied technical learning and visualization of microprocessor systems.</p>
-          <a href="Analyze%20Your%20Own%20Formative%20Assessment%20Experience.docx" target="_blank">Open Word Document</a>
-        </details>
       </div>
     </section>
 
@@ -950,6 +943,20 @@
             <li>Lifelong Learning</li>
             <li>Mentorship</li>
           </ul>
+
+          <h3>Documents</h3>
+          <div class="doc-section">
+            <details class="doc-dropdown">
+              <summary>Applying Universal Design for Learning</summary>
+              <p>Evidence for professional growth, future planning, and intention to share UDL strategies with colleagues.</p>
+              <a href="Applying%20Universal%20Design%20for%20Learning(1).docx" target="_blank">Open Word Document</a>
+            </details>
+            <details class="doc-dropdown">
+              <summary>Final Reflection – Indigenization and Teaching Practice</summary>
+              <p>Evidence for reflective practice, reconciliation learning, and professional development.</p>
+              <a href="Final%20Reflection_MatthewBespalko(1).docx" target="_blank">Open Word Document</a>
+            </details>
+          </div>
         </div>
         <div class="reflection-box">
           <h3>Reflection</h3>
@@ -957,20 +964,6 @@
             My professional growth is shaped by reflection, experimentation, and a commitment to improving student learning. I aim to share effective practices with colleagues and contribute to broader instructional improvement within my program.
           </p>
         </div>
-      </div>
-
-      <h3>Supporting Evidence</h3>
-      <div class="doc-section">
-        <details class="doc-dropdown">
-          <summary>Applying Universal Design for Learning</summary>
-          <p>Evidence for professional growth, future planning, and intention to share UDL strategies with colleagues.</p>
-          <a href="Applying%20Universal%20Design%20for%20Learning(1).docx" target="_blank">Open Word Document</a>
-        </details>
-        <details class="doc-dropdown">
-          <summary>Final Reflection – Indigenization and Teaching Practice</summary>
-          <p>Evidence for reflective practice, reconciliation learning, and professional development.</p>
-          <a href="Final%20Reflection_MatthewBespalko(1).docx" target="_blank">Open Word Document</a>
-        </details>
       </div>
     </section>
 
