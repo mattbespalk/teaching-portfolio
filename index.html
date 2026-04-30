@@ -158,24 +158,6 @@
       display: block;
       filter: saturate(1.05) contrast(1.05);
     }
-    .role-model {
-  display: flex;
-  align-items: flex-start;
-  gap: 20px;
-  margin: 20px 0;
-}
-
-.role-img {
-  width: 120px;
-  height: 120px;
-  object-fit: cover;
-  border-radius: 12px;
-  border: 2px solid #c8ddff;
-}
-
-.role-text {
-  flex: 1;
-}
 
     h1 {
       margin: 0 0 18px;
@@ -290,16 +272,64 @@
     .doc-link-list a:hover { background: var(--accent-light); border-color: #c8ddff; }
     .doc-note { display: block; margin-top: 4px; font-weight: 400; color: var(--muted); font-size: 0.92rem; }
 
-    @media (max-width: 1000px) {
-      .topbar-inner { flex-direction: column; align-items: flex-start; }
-      .hero-layout { grid-template-columns: 1fr; }
-      .hero-content { max-width: none; padding: 54px 24px 34px; }
-      .hero-image-wrap { min-height: 420px; }
-      .hero-image { min-height: 420px; object-position: center top; }
-      .hero-image-wrap::before { background: linear-gradient(180deg, #071226 0%, rgba(7,18,38,0.2) 42%, rgba(7,18,38,0.05) 100%); }
-      .hero-pill-row { grid-template-columns: repeat(2, 1fr); }
-      .hero-pill:nth-child(2) { border-right: 0; }
-      .card-grid, .two-col { grid-template-columns: 1fr 1fr; }
+    .role-models {
+      display: grid;
+      gap: 22px;
+      margin: 22px 0 30px;
+    }
+
+    .role-model-card {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 24px;
+      align-items: start;
+      padding: 20px;
+      background: #fbfdff;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+    }
+
+    .role-model-card img {
+      width: 140px;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 14px;
+      border: 2px solid #c8ddff;
+      background: #eef4ff;
+    }
+
+    .role-model-card h4 {
+      margin: 0 0 8px;
+      font-size: 1.25rem;
+      color: var(--text);
+    }
+
+    .role-model-card p {
+      margin: 0 0 12px;
+    }
+
+    .integrated-approach {
+      margin-top: 28px;
+      padding: 22px;
+      background: var(--accent-light);
+      border: 1px solid #c8ddff;
+      border-radius: 18px;
+    }
+
+    .integrated-approach h3 {
+      margin-top: 0;
+    }
+
+    @media (max-width: 700px) {
+      .role-model-card {
+        grid-template-columns: 1fr;
+      }
+
+      .role-model-card img {
+        width: 100%;
+        height: 220px;
+      }
     }
 
     @media (max-width: 700px) {
@@ -403,51 +433,67 @@
 
       <h3>Teaching Role Models and Their Contributions</h3>
 
-      <div class="role-model">
-  <img src="images/feynman.jpg" alt="Richard Feynman" class="role-img" />
+      <div class="role-models">
+        <div class="role-model-card">
+          <img src="images/feynman.jpg" alt="Richard Feynman">
+          <div>
+            <h4>Richard Feynman</h4>
+            <p>
+              <strong>Richard Feynman</strong> (1918–1988) was a Nobel Prize-winning physicist known for his ability to explain difficult concepts in simple, intuitive ways. His teaching philosophy emphasized <em>deep conceptual understanding</em>—if you can’t explain something simply, you don’t truly understand it.
+            </p>
+            <p>
+              <strong>What I implement:</strong> I begin with simple analogies and mental models before introducing technical detail. This ensures students understand the “why” behind systems, not just the “how.”
+            </p>
+          </div>
+        </div>
 
-  <div class="role-text">
-    <p>
-      <strong>Richard Feynman</strong> (1918–1988) was a Nobel Prize-winning physicist known for his ability to explain difficult concepts in simple, intuitive ways...
-    </p>
+        <div class="role-model-card">
+          <img src="images/fred-rogers.jpg" alt="Fred Rogers">
+          <div>
+            <h4>Fred Rogers</h4>
+            <p>
+              <strong>Fred Rogers</strong> (1928–2003), creator of <em>Mister Rogers’ Neighborhood</em>, was an educator focused on emotional intelligence, safety, and respect. His work demonstrated that learning environments must be <em>psychologically safe and supportive</em> for learners to succeed.
+            </p>
+            <p>
+              <strong>What I implement:</strong> I prioritize clarity, patience, and respect in the classroom. I create an environment where students feel comfortable asking questions, making mistakes, and developing confidence in their abilities.
+            </p>
+          </div>
+        </div>
 
-    <p>
-      <strong>What I implement:</strong> I begin with simple analogies and mental models before introducing technical detail.
-    </p>
-  </div>
-</div>
-<div class="role-model">
-  <img src="images/fred-rogers.jpg" alt="Fred Rogers" class="role-img" />
-      <p>
-        <strong>Fred Rogers</strong> (1928–2003), creator of <em>Mister Rogers’ Neighborhood</em>, was an educator focused on emotional intelligence, safety, and respect. His work demonstrated that learning environments must be <em>psychologically safe and supportive</em> for learners to succeed.
-        <br><br>
-        <strong>What I implement:</strong> I prioritize clarity, patience, and respect in the classroom. I create an environment where students feel comfortable asking questions, making mistakes, and developing confidence in their abilities.
-      </p>
+        <div class="role-model-card">
+          <img src="images/walter-lewin.jpg" alt="Walter Lewin">
+          <div>
+            <h4>Walter Lewin</h4>
+            <p>
+              <strong>Walter Lewin</strong> (1936– ) is a physicist and professor known for his highly engaging, demonstration-driven lectures at MIT. His teaching style emphasized <em>energy, visualization, and memorable experiences</em> that make learning impactful and lasting.
+            </p>
+            <p>
+              <strong>What I implement:</strong> I incorporate dynamic demonstrations, real-world examples, and enthusiasm to make lessons engaging and memorable. I aim to create moments that students will remember long after the class is over.
+            </p>
+          </div>
+        </div>
+      </div>
 
-      <p>
-        <strong>Walter Lewin</strong> (1936– ) is a physicist and professor known for his highly engaging, demonstration-driven lectures at MIT. His teaching style emphasized <em>energy, visualization, and memorable experiences</em> that make learning impactful and lasting.
-        <br><br>
-        <strong>What I implement:</strong> I incorporate dynamic demonstrations, real-world examples, and enthusiasm to make lessons engaging and memorable. I aim to create moments that students will remember long after the class is over.
-      </p>
+      <div class="integrated-approach">
+        <h3>Integrated Teaching Approach</h3>
+        <p>
+          I combine these influences into a structured instructional approach:
+        </p>
+        <ul class="artifact-list">
+          <li>Begin with intuitive, analogy-driven explanations (Feynman)</li>
+          <li>Create an engaging and memorable learning experience through demonstration and visualization (Lewin)</li>
+          <li>Maintain a safe, respectful, and supportive learning environment (Rogers)</li>
+          <li>Reinforce concepts through hands-on labs and real system interaction</li>
+        </ul>
 
-      <h3>Integrated Teaching Approach</h3>
-      <p>
-        I combine these influences into a structured instructional approach:
-      </p>
-      <ul class="artifact-list">
-        <li>Begin with intuitive, analogy-driven explanations (Feynman)</li>
-        <li>Create an engaging and memorable learning experience through demonstration and visualization (Lewin)</li>
-        <li>Maintain a safe, respectful, and supportive learning environment (Rogers)</li>
-        <li>Reinforce concepts through hands-on labs and real system interaction</li>
-      </ul>
+        <p>
+          I also view teaching as a communication system. Concepts must be clearly encoded, transmitted through accessible learning experiences, and received by students in ways that make sense to them. My role is to reduce "noise"—barriers such as confusion, anxiety, or unclear instruction—so that learning can occur effectively.
+        </p>
 
-      <p>
-        I also view teaching as a communication system. Concepts must be clearly encoded, transmitted through accessible learning experiences, and received by students in ways that make sense to them. My role is to reduce "noise"—barriers such as confusion, anxiety, or unclear instruction—so that learning can occur effectively.
-      </p>
-
-      <p>
-        Ultimately, my goal is to develop confident, capable technologists who can think critically, adapt to unfamiliar problems, and apply their knowledge in real-world environments.
-      </p>
+        <p>
+          Ultimately, my goal is to develop confident, capable technologists who can think critically, adapt to unfamiliar problems, and apply their knowledge in real-world environments.
+        </p>
+      </div>
 
       <div class="placeholder-box">
         <strong>Optional Enhancement:</strong> Add a short real classroom example showing these influences in action (e.g., a lab where students moved from confusion to understanding through demonstration and hands-on work).
