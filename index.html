@@ -27,8 +27,8 @@
     a { color: var(--accent); }
 
     .topbar {
-      position: sticky;
-      top: 0;
+      position: relative; /* removed sticky behavior */
+      top: auto;
       z-index: 100;
       background: rgba(7, 18, 38, 0.96);
       backdrop-filter: blur(10px);
@@ -831,3 +831,4 @@
   </footer>
 </body>
 </html>
+
