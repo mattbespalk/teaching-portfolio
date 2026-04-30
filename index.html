@@ -40,10 +40,11 @@
       margin: 0 auto;
       padding: 14px 22px;
       display: flex;
-      align-items: flex-start; /* align top for multi-line */
-      justify-content: space-between;
+      align-items: center;
+      justify-content: center; /* center everything */
       gap: 20px;
-      flex-wrap: wrap; /* allow nav to wrap below */
+      flex-wrap: wrap;
+      text-align: center;
     }
 
     .brand {
@@ -86,10 +87,12 @@
     .nav-links {
       display: flex;
       align-items: center;
+      justify-content: center; /* center horizontally */
       gap: 6px;
-      flex-wrap: wrap; /* allow wrapping to second line */
-      white-space: normal; /* remove horizontal scrolling */
+      flex-wrap: wrap;
+      white-space: normal;
       max-width: 800px;
+      margin: 0 auto; /* center block */
     }
 
     .nav-links a {
