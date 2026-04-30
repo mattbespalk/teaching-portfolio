@@ -1,10 +1,9 @@
-<!DOCTYPE html>
+
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Teaching Portfolio of Matthew Bespalko</title>
-
+  <title>Matthew Bespalko | Teaching Portfolio</title>
   <style>
     :root {
       --bg: #f4f7fb;
@@ -24,19 +23,11 @@
 
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.65;
-    }
-
+    body { margin: 0; font-family: Arial, Helvetica, sans-serif; background: var(--bg); color: var(--text); line-height: 1.65; }
     a { color: var(--accent); }
 
     .topbar {
-      position: static;
+      position: static; /* the header is now part of the page flow and scrolls away */
       background: rgba(7, 18, 38, 0.98);
       border-bottom: 1px solid rgba(255,255,255,0.1);
     }
@@ -47,7 +38,7 @@
       padding: 18px 22px 24px;
       display: flex;
       flex-direction: column;
-      align-items: stretch;
+      align-items: stretch; /* allow full width usage */
       justify-content: center;
       gap: 18px;
       text-align: center;
@@ -71,23 +62,22 @@
       place-items: center;
       font-weight: 900;
       color: white;
-      flex: 0 0 auto;
     }
 
     .brand-title {
       display: block;
-      font-size: clamp(1.4rem, 3vw, 2rem);
+      font-size: 1.35rem;
       font-weight: 900;
       letter-spacing: 0.03em;
-      line-height: 1.1;
+      line-height: 1;
     }
 
     .brand-subtitle {
       display: block;
       color: var(--accent-2);
-      font-size: 0.95rem;
+      font-size: 0.82rem;
       font-weight: 800;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.08em;
       margin-top: 4px;
       text-transform: uppercase;
     }
@@ -95,8 +85,8 @@
     .nav-links {
       display: flex;
       align-items: center;
-      justify-content: center;
-      gap: 12px 24px;
+      justify-content: center; /* center rows instead of stretching */
+      gap: 12px 24px; /* consistent spacing */
       flex-wrap: wrap;
       white-space: normal;
       width: 100%;
@@ -114,16 +104,11 @@
       line-height: 1.2;
     }
 
-    .nav-links a:hover {
-      background: rgba(79,140,255,0.18);
-      color: #ffffff;
-    }
+    .nav-links a:hover { background: rgba(79,140,255,0.18); color: #ffffff; }
 
     header {
       color: white;
-      background:
-        linear-gradient(90deg, rgba(7,18,38,0.98) 0%, rgba(7,18,38,0.92) 42%, rgba(7,18,38,0.45) 72%, rgba(7,18,38,0.22) 100%),
-        url('portfolio-hero.jpg') center right / cover no-repeat;
+      background: linear-gradient(135deg, #061122 0%, #071b36 48%, #102b55 100%);
       min-height: 680px;
       display: flex;
       align-items: stretch;
@@ -131,12 +116,14 @@
       overflow: hidden;
     }
 
+    .container { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+
     .hero-layout {
       max-width: 1400px;
       margin: 0 auto;
       width: 100%;
       display: grid;
-      grid-template-columns: 1fr;
+      grid-template-columns: 1fr 1.05fr;
       align-items: stretch;
     }
 
@@ -148,10 +135,19 @@
     }
 
     .hero-image-wrap {
-      display: none;
+      position: relative;
+      min-height: 680px;
+      overflow: hidden;
     }
 
-    .hero-image-wrap::before { display: none; }
+    .hero-image-wrap::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, #071226 0%, rgba(7,18,38,0.72) 18%, rgba(7,18,38,0.18) 52%, rgba(7,18,38,0.05) 100%);
+      z-index: 1;
+      pointer-events: none;
+    }
 
     .hero-image {
       width: 100%;
@@ -161,13 +157,6 @@
       object-position: center center;
       display: block;
       filter: saturate(1.05) contrast(1.05);
-    }
-
-    .welcome {
-      color: var(--accent-2);
-      font-weight: 900;
-      font-size: 1.25rem;
-      margin-bottom: 8px;
     }
 
     h1 {
@@ -204,12 +193,7 @@
       line-height: 1.65;
     }
 
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin: 28px 0 42px;
-    }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin: 28px 0 42px; }
 
     .button-primary,
     .button-secondary {
@@ -225,20 +209,9 @@
       cursor: pointer;
     }
 
-    .button-primary {
-      background: var(--accent);
-      color: white;
-      border: 1px solid var(--accent);
-    }
-
+    .button-primary { background: var(--accent); color: white; border: 1px solid var(--accent); }
     .button-primary:hover { background: #3477ef; }
-
-    .button-secondary {
-      background: transparent;
-      color: white;
-      border: 1px solid rgba(255,255,255,0.75);
-    }
-
+    .button-secondary { background: transparent; color: white; border: 1px solid rgba(255,255,255,0.75); }
     .button-secondary:hover { background: rgba(255,255,255,0.12); }
 
     .hero-pill-row {
@@ -261,18 +234,7 @@
     }
 
     .hero-pill:last-child { border-right: 0; }
-    .hero-pill span {
-      display: block;
-      color: var(--accent-2);
-      font-size: 1.6rem;
-      margin-bottom: 6px;
-    }
-
-    .container {
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
+    .hero-pill span { display: block; color: var(--accent-2); font-size: 1.6rem; margin-bottom: 6px; }
 
     main { padding: 34px 0 70px; }
 
@@ -286,154 +248,29 @@
       scroll-margin-top: 24px;
     }
 
-    h2 {
-      margin: 0 0 12px;
-      font-size: clamp(1.7rem, 3vw, 2.4rem);
-      line-height: 1.15;
-      color: var(--text);
-      text-transform: uppercase;
-      letter-spacing: 0.02em;
-    }
+    h2 { margin: 0 0 12px; font-size: clamp(1.7rem, 3vw, 2.4rem); line-height: 1.15; color: var(--text); text-transform: uppercase; letter-spacing: 0.02em; }
+    h3 { margin: 26px 0 8px; font-size: 1.25rem; color: #174ea6; }
+    .section-intro { color: var(--muted); font-size: 1.03rem; max-width: 900px; }
 
-    h3 {
-      margin: 26px 0 8px;
-      font-size: 1.25rem;
-      color: #174ea6;
-    }
+    .card-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 22px; }
+    .mini-card { background: var(--accent-light); border: 1px solid #c8ddff; border-radius: 16px; padding: 18px; }
+    .mini-card strong { display: block; color: #174ea6; margin-bottom: 6px; font-size: 1rem; }
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 18px; }
 
-    .section-intro {
-      color: var(--muted);
-      font-size: 1.03rem;
-      max-width: 900px;
-    }
-
-    .card-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
-      margin-top: 22px;
-    }
-
-    .mini-card {
-      background: var(--accent-light);
-      border: 1px solid #c8ddff;
-      border-radius: 16px;
-      padding: 18px;
-    }
-
-    .mini-card strong {
-      display: block;
-      color: #174ea6;
-      margin-bottom: 6px;
-      font-size: 1rem;
-    }
-
-    .two-col {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 22px;
-      margin-top: 18px;
-    }
-
-    .evidence-box,
-    .reflection-box,
-    .placeholder-box {
-      border-radius: 16px;
-      padding: 18px;
-      border: 1px solid var(--border);
-      background: #fbfdff;
-    }
-
-    .reflection-box {
-      background: #f7fbff;
-      border-color: #c8ddff;
-    }
-
-    .placeholder-box {
-      background: var(--warning);
-      border: 1px dashed var(--warning-border);
-      margin-top: 18px;
-    }
-
-    .tag-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      padding: 0;
-      margin: 14px 0 0;
-      list-style: none;
-    }
-
-    .tag-list li {
-      padding: 6px 10px;
-      background: var(--accent-light);
-      color: #174ea6;
-      border-radius: 999px;
-      font-size: 0.9rem;
-      font-weight: 700;
-    }
-
-    .artifact-list {
-      margin: 8px 0 0;
-      padding-left: 20px;
-    }
-
+    .evidence-box, .reflection-box, .placeholder-box { border-radius: 16px; padding: 18px; border: 1px solid var(--border); background: #fbfdff; }
+    .reflection-box { background: #f7fbff; border-color: #c8ddff; }
+    .placeholder-box { background: var(--warning); border: 1px dashed var(--warning-border); }
+    .tag-list { display: flex; flex-wrap: wrap; gap: 8px; padding: 0; margin: 14px 0 0; list-style: none; }
+    .tag-list li { padding: 6px 10px; background: var(--accent-light); color: #174ea6; border-radius: 999px; font-size: 0.9rem; font-weight: 700; }
+    .artifact-list { margin: 8px 0 0; padding-left: 20px; }
     .artifact-list li { margin-bottom: 6px; }
+    .callout { margin-top: 22px; padding: 18px; border-left: 6px solid var(--accent); background: var(--accent-light); border-radius: 12px; }
+    .footer { text-align: center; color: var(--muted); font-size: 0.95rem; padding: 30px 20px; }
 
-    .doc-section {
-      margin-top: 18px;
-      display: grid;
-      gap: 12px;
-    }
-
-    .doc-dropdown {
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      background: #f9fbff;
-      overflow: hidden;
-    }
-
-    .doc-dropdown summary {
-      list-style: none;
-      cursor: pointer;
-      padding: 14px 16px;
-      font-weight: 900;
-      color: #174ea6;
-      background: #ffffff;
-      border-bottom: 1px solid transparent;
-    }
-
-    .doc-dropdown summary::-webkit-details-marker { display: none; }
-
-    .doc-dropdown summary::before {
-      content: "▶";
-      display: inline-block;
-      margin-right: 8px;
-      font-size: 0.8rem;
-      transition: transform 0.2s ease;
-    }
-
-    .doc-dropdown[open] summary::before { transform: rotate(90deg); }
-    .doc-dropdown[open] summary { border-bottom-color: var(--border); }
-
-    .doc-dropdown p {
-      margin: 0;
-      padding: 14px 16px 6px;
-      color: var(--muted);
-    }
-
-    .doc-dropdown a {
-      display: inline-block;
-      margin: 8px 16px 16px;
-      padding: 9px 12px;
-      border-radius: 8px;
-      background: var(--accent);
-      color: white;
-      text-decoration: none;
-      font-weight: 800;
-    }
-
-    .doc-dropdown a:hover { background: #3477ef; }
+    .doc-link-list { display: grid; gap: 10px; margin-top: 14px; padding: 0; list-style: none; }
+    .doc-link-list a { display: block; padding: 12px 14px; background: #ffffff; border: 1px solid var(--border); border-radius: 12px; text-decoration: none; font-weight: 700; color: #174ea6; }
+    .doc-link-list a:hover { background: var(--accent-light); border-color: #c8ddff; }
+    .doc-note { display: block; margin-top: 4px; font-weight: 400; color: var(--muted); font-size: 0.92rem; }
 
     .role-models {
       display: grid;
@@ -468,7 +305,9 @@
       color: var(--text);
     }
 
-    .role-model-card p { margin: 0 0 12px; }
+    .role-model-card p {
+      margin: 0 0 12px;
+    }
 
     .integrated-approach {
       margin-top: 28px;
@@ -478,26 +317,19 @@
       border-radius: 18px;
     }
 
-    .integrated-approach h3 { margin-top: 0; }
-
-    .footer {
-      text-align: center;
-      color: var(--muted);
-      font-size: 0.95rem;
-      padding: 30px 20px;
+    .integrated-approach h3 {
+      margin-top: 0;
     }
 
-    @media (max-width: 1000px) {
-      .hero-layout { grid-template-columns: 1fr; }
-      .hero-content { max-width: none; padding: 54px 24px 34px; }
-      .hero-image-wrap { min-height: 420px; }
-      .hero-image { min-height: 420px; object-position: center top; }
-      .hero-image-wrap::before {
-        background: linear-gradient(180deg, #071226 0%, rgba(7,18,38,0.2) 42%, rgba(7,18,38,0.05) 100%);
+    @media (max-width: 700px) {
+      .role-model-card {
+        grid-template-columns: 1fr;
       }
-      .hero-pill-row { grid-template-columns: repeat(2, 1fr); }
-      .hero-pill:nth-child(2) { border-right: 0; }
-      .card-grid, .two-col { grid-template-columns: 1fr 1fr; }
+
+      .role-model-card img {
+        width: 100%;
+        height: 220px;
+      }
     }
 
     @media (max-width: 700px) {
@@ -509,10 +341,7 @@
       .hero-pill-row, .card-grid, .two-col { grid-template-columns: 1fr; }
       .hero-pill { border-right: 0; border-bottom: 1px solid rgba(255,255,255,0.18); }
       section { padding: 24px 18px; border-radius: 18px; }
-      .brand { flex-direction: column; }
-      .brand-title { font-size: 1.3rem; }
-      .role-model-card { grid-template-columns: 1fr; }
-      .role-model-card img { width: 100%; height: 220px; }
+      .brand-title { font-size: 1.05rem; }
     }
 
     @media print {
@@ -525,18 +354,16 @@
     }
   </style>
 </head>
-
 <body>
   <nav class="topbar" aria-label="Portfolio navigation">
     <div class="topbar-inner">
       <a class="brand" href="#top">
         <span class="brand-icon">RF</span>
         <span>
-          <span class="brand-title">Teaching Portfolio of Matthew Bespalko</span>
+          <span class="brand-title">Teaching Portfolio</span>
           <span class="brand-subtitle">Electronics & RF Instructor</span>
         </span>
       </a>
-
       <div class="nav-links">
         <a href="#overview">Home</a>
         <a href="#philosophy">Philosophy</a>
@@ -574,7 +401,8 @@
       </div>
 
       <div class="hero-image-wrap">
-        <img class="hero-image" src="portfolio-hero.jpg" alt="Matthew Bespalko with an electronics/RF demonstration device" />
+        <!-- Save your uploaded photo as images/portfolio-hero.jpg so it appears here -->
+        <img class="hero-image" src="images/portfolio-hero.jpg" alt="Matthew Bespalko with an electronics/RF demonstration device" />
       </div>
     </div>
   </header>
@@ -583,7 +411,7 @@
     <section id="overview">
       <h2>Portfolio Overview</h2>
       <p class="section-intro">
-        This portfolio is organized around Saskatchewan Polytechnic’s instructor competency areas. Each section includes a statement of practice, evidence, reflection, and placeholders for additional documentation.
+        This portfolio is organized around seven Saskatchewan Polytechnic instructor competency areas. Each section includes a statement of practice, evidence or artifacts, reflection, and placeholders for additional documentation.
       </p>
       <div class="card-grid">
         <div class="mini-card"><strong>Hands-On Learning</strong>Students learn by building, testing, measuring, and troubleshooting real systems.</div>
@@ -648,19 +476,27 @@
 
       <div class="integrated-approach">
         <h3>Integrated Teaching Approach</h3>
-        <p>I combine these influences into a structured instructional approach:</p>
+        <p>
+          I combine these influences into a structured instructional approach:
+        </p>
         <ul class="artifact-list">
           <li>Begin with intuitive, analogy-driven explanations (Feynman)</li>
           <li>Create an engaging and memorable learning experience through demonstration and visualization (Lewin)</li>
           <li>Maintain a safe, respectful, and supportive learning environment (Rogers)</li>
           <li>Reinforce concepts through hands-on labs and real system interaction</li>
         </ul>
+
         <p>
-          I also view teaching as a communication system. Concepts must be clearly encoded, transmitted through accessible learning experiences, and received by students in ways that make sense to them. My role is to reduce “noise”—barriers such as confusion, anxiety, or unclear instruction—so that learning can occur effectively.
+          I also view teaching as a communication system. Concepts must be clearly encoded, transmitted through accessible learning experiences, and received by students in ways that make sense to them. My role is to reduce "noise"—barriers such as confusion, anxiety, or unclear instruction—so that learning can occur effectively.
         </p>
+
         <p>
           Ultimately, my goal is to develop confident, capable technologists who can think critically, adapt to unfamiliar problems, and apply their knowledge in real-world environments.
         </p>
+      </div>
+
+      <div class="placeholder-box">
+        <strong>Optional Enhancement:</strong> Add a short real classroom example showing these influences in action (e.g., a lab where students moved from confusion to understanding through demonstration and hands-on work).
       </div>
     </section>
 
@@ -683,24 +519,27 @@
             <li>Hands-On Labs</li>
           </ul>
 
-          <h3>Documents</h3>
-          <div class="doc-section">
-            <details class="doc-dropdown">
-              <summary>Formative Assessment Strategy – Microprocessor Role-Play</summary>
-              <p>Hands-on learning strategy demonstrating active learning, role-play, and system-level understanding.</p>
-              <a href="Analyze%20Your%20Own%20Formative%20Assessment%20Experience.docx" target="_blank">Open Word Document</a>
-            </details>
-            <details class="doc-dropdown">
-              <summary>Assignment Revision – “How to Stay Dry”</summary>
-              <p>Supports instructional clarity, sequencing, scaffolding, and accessible assignment design.</p>
-              <a href="Assignment%20Revising%20Instructions(1).docx" target="_blank">Open Word Document</a>
-            </details>
-            <details class="doc-dropdown">
-              <summary>Applying Universal Design for Learning</summary>
-              <p>Shows multimodal, student-centred instruction and engagement design.</p>
-              <a href="Applying%20Universal%20Design%20for%20Learning(1).docx" target="_blank">Open Word Document</a>
-            </details>
-          </div>
+          <h3>Assessment Documents</h3>
+          <ul class="doc-link-list">
+            <li>
+              <a href="Analyze%20Your%20Own%20Formative%20Assessment%20Experience%20(1).docx" target="_blank">
+                Analyze Your Own Formative Assessment Experience
+                <span class="doc-note">Supports Instruction & Delivery through active learning, role-play, engagement, and hands-on microprocessor instruction.</span>
+              </a>
+            </li>
+            <li>
+              <a href="Assignment%20Revising%20Instructions.docx" target="_blank">
+                Assignment Revising Instructions
+                <span class="doc-note">Supports Instruction & Delivery through clearer sequencing, scaffolding, and accessible assignment design.</span>
+              </a>
+            </li>
+            <li>
+              <a href="Applying%20Universal%20Design%20for%20Learning.docx" target="_blank">
+                Applying Universal Design for Learning
+                <span class="doc-note">Supports Instruction & Delivery by showing multimodal, student-centred learning design.</span>
+              </a>
+            </li>
+          </ul>
         </div>
         <div class="reflection-box">
           <h3>Reflection</h3>
@@ -708,6 +547,9 @@
             Hands-on, role-based instruction helps students make abstract concepts visible. When students physically model system interactions, they are often better able to explain how components work together and why those interactions matter.
           </p>
         </div>
+      </div>
+      <div class="placeholder-box">
+        <strong>Placeholders to add:</strong> classroom photo, microprocessor activity image, sample lesson plan, student engagement example, or short video of a lab demonstration.
       </div>
     </section>
 
@@ -730,24 +572,27 @@
             <li>Feedback</li>
           </ul>
 
-          <h3>Documents</h3>
-          <div class="doc-section">
-            <details class="doc-dropdown">
-              <summary>Multiple-Choice Assessment Design</summary>
-              <p>Evidence for designing valid, clear, aligned, and fair assessment items based on foundational electrical theory.</p>
-              <a href="Alignment%20with%20Multiple-Choice%20Test%20Guidelines(1).docx" target="_blank">Open Word Document</a>
-            </details>
-            <details class="doc-dropdown">
-              <summary>Formative Assessment Strategy – Microprocessor Role-Play</summary>
-              <p>Evidence for observing learner understanding and using formative assessment during active learning.</p>
-              <a href="Analyze%20Your%20Own%20Formative%20Assessment%20Experience.docx" target="_blank">Open Word Document</a>
-            </details>
-            <details class="doc-dropdown">
-              <summary>Assignment Revision – “How to Stay Dry”</summary>
-              <p>Evidence for process-focused assessment and reflection-based troubleshooting.</p>
-              <a href="Assignment%20Revising%20Instructions(1).docx" target="_blank">Open Word Document</a>
-            </details>
-          </div>
+          <h3>Assessment Documents</h3>
+          <ul class="doc-link-list">
+            <li>
+              <a href="Analyze%20Your%20Own%20Formative%20Assessment%20Experience%20(1).docx" target="_blank">
+                Analyze Your Own Formative Assessment Experience
+                <span class="doc-note">Primary evidence for formative assessment, observation of learner understanding, and reflection on student performance.</span>
+              </a>
+            </li>
+            <li>
+              <a href="Alignment%20with%20Multiple-Choice%20Test%20Guidelines.docx" target="_blank">
+                Alignment with Multiple-Choice Test Guidelines
+                <span class="doc-note">Primary evidence for assessment design, outcome alignment, test clarity, and fair evaluation practices.</span>
+              </a>
+            </li>
+            <li>
+              <a href="Assignment%20Revising%20Instructions.docx" target="_blank">
+                Assignment Revising Instructions
+                <span class="doc-note">Supports assessment through reflection-based troubleshooting and process-focused evaluation.</span>
+              </a>
+            </li>
+          </ul>
         </div>
         <div class="reflection-box">
           <h3>Reflection</h3>
@@ -755,6 +600,9 @@
             Combining formative observation with structured reflection provides a fuller picture of student learning. Students often show deeper understanding through explanation, process documentation, and troubleshooting than through final answers alone.
           </p>
         </div>
+      </div>
+      <div class="placeholder-box">
+        <strong>Placeholders to add:</strong> grading rubric, anonymized student work, example feedback, course assessment plan, or before/after assessment revision.
       </div>
     </section>
 
@@ -777,19 +625,27 @@
             <li>Learner Variability</li>
           </ul>
 
-          <h3>Documents</h3>
-          <div class="doc-section">
-            <details class="doc-dropdown">
-              <summary>Applying Universal Design for Learning</summary>
-              <p>Primary evidence for UDL, engagement, accessibility, adult learner support, and reducing barriers.</p>
-              <a href="Applying%20Universal%20Design%20for%20Learning(1).docx" target="_blank">Open Word Document</a>
-            </details>
-            <details class="doc-dropdown">
-              <summary>Learning Technology Review – PhET</summary>
-              <p>Evidence for accessible and equitable technology selection.</p>
-              <a href="Learning%20Technology%20Review(1).docx" target="_blank">Open Word Document</a>
-            </details>
-          </div>
+          <h3>Assessment Documents</h3>
+          <ul class="doc-link-list">
+            <li>
+              <a href="Applying%20Universal%20Design%20for%20Learning.docx" target="_blank">
+                Applying Universal Design for Learning
+                <span class="doc-note">Primary evidence for UDL, engagement, accessibility, adult learner support, and reducing barriers.</span>
+              </a>
+            </li>
+            <li>
+              <a href="Assignment%20Revising%20Instructions.docx" target="_blank">
+                Assignment Revising Instructions
+                <span class="doc-note">Supports Diversity & Inclusion by showing how clear instructions reduce uncertainty and cognitive barriers.</span>
+              </a>
+            </li>
+            <li>
+              <a href="Learning%20Technology%20Review.docx" target="_blank">
+                Learning Technology Review
+                <span class="doc-note">Supports inclusive technology selection through accessibility, equity, and device-access considerations.</span>
+              </a>
+            </li>
+          </ul>
         </div>
         <div class="reflection-box">
           <h3>Reflection</h3>
@@ -798,9 +654,8 @@
           </p>
         </div>
       </div>
-
       <div class="placeholder-box">
-        <strong>Placeholder to add:</strong> Reference letter from accommodations/accessibility staff, example of a modified assignment, student success observation, or learner feedback.
+        <strong>Placeholders to add:</strong> reference letter from accommodations/accessibility staff, example of a modified assignment, student success observation, accessibility improvement, or learner feedback.
       </div>
     </section>
 
@@ -823,14 +678,15 @@
             <li>Reconciliation</li>
           </ul>
 
-          <h3>Documents</h3>
-          <div class="doc-section">
-            <details class="doc-dropdown">
-              <summary>Final Reflection – Indigenization and Teaching Practice</summary>
-              <p>Primary evidence for reflection on Indigenous perspectives, storytelling, community connection, and ongoing reconciliation learning.</p>
-              <a href="Final%20Reflection_MatthewBespalko(1).docx" target="_blank">Open Word Document</a>
-            </details>
-          </div>
+          <h3>Assessment Documents</h3>
+          <ul class="doc-link-list">
+            <li>
+              <a href="Final%20Reflection_MatthewBespalko.docx" target="_blank">
+                Final Reflection
+                <span class="doc-note">Primary evidence for Indigenization & Reconciliation, including reflection on storytelling, Indigenous ways of knowing, and ongoing community connection.</span>
+              </a>
+            </li>
+          </ul>
         </div>
         <div class="reflection-box">
           <h3>Reflection</h3>
@@ -838,6 +694,9 @@
             Reflecting on Indigenous approaches to education has helped me recognize that storytelling can be more than a way to explain concepts. It can create connection, context, and meaning while supporting a more relational learning environment.
           </p>
         </div>
+      </div>
+      <div class="placeholder-box">
+        <strong>Placeholders to add:</strong> example of Indigenous content in a course, community engagement evidence, guest speaker/activity, land acknowledgement practice, or future learning plan.
       </div>
     </section>
 
@@ -860,19 +719,21 @@
             <li>Alignment</li>
           </ul>
 
-          <h3>Documents</h3>
-          <div class="doc-section">
-            <details class="doc-dropdown">
-              <summary>Assignment Revision – “How to Stay Dry”</summary>
-              <p>Primary evidence for curriculum design, scaffolding, clear instructions, and alignment to troubleshooting outcomes.</p>
-              <a href="Assignment%20Revising%20Instructions(1).docx" target="_blank">Open Word Document</a>
-            </details>
-            <details class="doc-dropdown">
-              <summary>Multiple-Choice Assessment Design</summary>
-              <p>Evidence for aligning assessment items with learning outcomes and foundational electrical concepts.</p>
-              <a href="Alignment%20with%20Multiple-Choice%20Test%20Guidelines(1).docx" target="_blank">Open Word Document</a>
-            </details>
-          </div>
+          <h3>Assessment Documents</h3>
+          <ul class="doc-link-list">
+            <li>
+              <a href="Assignment%20Revising%20Instructions.docx" target="_blank">
+                Assignment Revising Instructions
+                <span class="doc-note">Primary evidence for curriculum design, scaffolding, clear instructions, and alignment to troubleshooting outcomes.</span>
+              </a>
+            </li>
+            <li>
+              <a href="Alignment%20with%20Multiple-Choice%20Test%20Guidelines.docx" target="_blank">
+                Alignment with Multiple-Choice Test Guidelines
+                <span class="doc-note">Supports Curriculum Development by aligning test items with learning outcomes and foundational electrical concepts.</span>
+              </a>
+            </li>
+          </ul>
         </div>
         <div class="reflection-box">
           <h3>Reflection</h3>
@@ -880,6 +741,9 @@
             Clear curriculum design reduces uncertainty and cognitive load. When learning activities are sequenced carefully, students can focus on the technical thinking rather than trying to decode unclear instructions.
           </p>
         </div>
+      </div>
+      <div class="placeholder-box">
+        <strong>Placeholders to add:</strong> course outline, learning outcomes document, curriculum map, program redesign evidence, or accreditation/TAC alignment notes.
       </div>
     </section>
 
@@ -902,19 +766,21 @@
             <li>EdTech</li>
           </ul>
 
-          <h3>Documents</h3>
-          <div class="doc-section">
-            <details class="doc-dropdown">
-              <summary>Learning Technology Review – PhET Interactive Simulations</summary>
-              <p>Primary evidence for evaluating educational technology, accessibility, privacy, equity, and classroom use.</p>
-              <a href="Learning%20Technology%20Review(1).docx" target="_blank">Open Word Document</a>
-            </details>
-            <details class="doc-dropdown">
-              <summary>Formative Assessment Strategy – Microprocessor Role-Play</summary>
-              <p>Evidence for applied technical learning and visualization of microprocessor systems.</p>
-              <a href="Analyze%20Your%20Own%20Formative%20Assessment%20Experience.docx" target="_blank">Open Word Document</a>
-            </details>
-          </div>
+          <h3>Assessment Documents</h3>
+          <ul class="doc-link-list">
+            <li>
+              <a href="Learning%20Technology%20Review.docx" target="_blank">
+                Learning Technology Review
+                <span class="doc-note">Primary evidence for Technology through evaluation of PhET simulations, accessibility, privacy, equity, and classroom application.</span>
+              </a>
+            </li>
+            <li>
+              <a href="Analyze%20Your%20Own%20Formative%20Assessment%20Experience%20(1).docx" target="_blank">
+                Analyze Your Own Formative Assessment Experience
+                <span class="doc-note">Supports Technology through applied microprocessor instruction and technical system visualization.</span>
+              </a>
+            </li>
+          </ul>
         </div>
         <div class="reflection-box">
           <h3>Reflection</h3>
@@ -922,6 +788,9 @@
             Technology can make abstract concepts more visible and interactive. At the same time, I must evaluate tools for accessibility, equity, safety, privacy, and alignment with learning outcomes.
           </p>
         </div>
+      </div>
+      <div class="placeholder-box">
+        <strong>Placeholders to add:</strong> PhET screenshot, Arduino/ESP32 project photo, Brightspace screenshot, code sample, interactive HTML tool, or lab equipment image.
       </div>
     </section>
 
@@ -944,19 +813,21 @@
             <li>Mentorship</li>
           </ul>
 
-          <h3>Documents</h3>
-          <div class="doc-section">
-            <details class="doc-dropdown">
-              <summary>Applying Universal Design for Learning</summary>
-              <p>Evidence for professional growth, future planning, and intention to share UDL strategies with colleagues.</p>
-              <a href="Applying%20Universal%20Design%20for%20Learning(1).docx" target="_blank">Open Word Document</a>
-            </details>
-            <details class="doc-dropdown">
-              <summary>Final Reflection – Indigenization and Teaching Practice</summary>
-              <p>Evidence for reflective practice, reconciliation learning, and professional development.</p>
-              <a href="Final%20Reflection_MatthewBespalko(1).docx" target="_blank">Open Word Document</a>
-            </details>
-          </div>
+          <h3>Assessment Documents</h3>
+          <ul class="doc-link-list">
+            <li>
+              <a href="Applying%20Universal%20Design%20for%20Learning.docx" target="_blank">
+                Applying Universal Design for Learning
+                <span class="doc-note">Primary evidence for professional growth through reflection, future planning, and intent to support colleagues with UDL strategies.</span>
+              </a>
+            </li>
+            <li>
+              <a href="Final%20Reflection_MatthewBespalko.docx" target="_blank">
+                Final Reflection
+                <span class="doc-note">Supports Professionalism through reflective practice, reconciliation learning, and ongoing professional development.</span>
+              </a>
+            </li>
+          </ul>
         </div>
         <div class="reflection-box">
           <h3>Reflection</h3>
@@ -965,54 +836,63 @@
           </p>
         </div>
       </div>
+      <div class="placeholder-box">
+        <strong>Placeholders to add:</strong> PD courses completed, certificates, committee work, mentorship examples, peer feedback, or examples of resource sharing with colleagues.
+      </div>
     </section>
 
     <section id="appendices">
       <h2>Appendices & Supporting Artifacts</h2>
       <p class="section-intro">
-        This section contains downloadable or linked evidence that supports the competency sections above. Documents are placed in expandable sections to keep the page organized and reduce visual clutter.
+        This section should contain downloadable or linked evidence that supports the competency sections above.
       </p>
-
-      <div class="doc-section">
-        <details class="doc-dropdown">
-          <summary>Analyze Your Own Formative Assessment Experience</summary>
-          <p>Supports Instruction & Delivery, Assessment & Evaluation, Diversity & Inclusion, and Technology.</p>
-          <a href="Analyze%20Your%20Own%20Formative%20Assessment%20Experience.docx" target="_blank">Open Word Document</a>
-        </details>
-
-        <details class="doc-dropdown">
-          <summary>Assignment Revising Instructions</summary>
-          <p>Supports Instruction & Delivery, Assessment & Evaluation, Diversity & Inclusion, and Curriculum Development.</p>
-          <a href="Assignment%20Revising%20Instructions(1).docx" target="_blank">Open Word Document</a>
-        </details>
-
-        <details class="doc-dropdown">
-          <summary>Alignment with Multiple-Choice Test Guidelines</summary>
-          <p>Supports Assessment & Evaluation and Curriculum Development.</p>
-          <a href="Alignment%20with%20Multiple-Choice%20Test%20Guidelines(1).docx" target="_blank">Open Word Document</a>
-        </details>
-
-        <details class="doc-dropdown">
-          <summary>Final Reflection</summary>
-          <p>Supports Indigenization & Reconciliation and Professionalism, Development & Mentorship.</p>
-          <a href="Final%20Reflection_MatthewBespalko(1).docx" target="_blank">Open Word Document</a>
-        </details>
-
-        <details class="doc-dropdown">
-          <summary>Applying Universal Design for Learning</summary>
-          <p>Supports Diversity & Inclusion, Instruction & Delivery, and Professionalism, Development & Mentorship.</p>
-          <a href="Applying%20Universal%20Design%20for%20Learning(1).docx" target="_blank">Open Word Document</a>
-        </details>
-
-        <details class="doc-dropdown">
-          <summary>Learning Technology Review</summary>
-          <p>Supports Technology, Diversity & Inclusion, Instruction & Delivery, and Curriculum Development.</p>
-          <a href="Learning%20Technology%20Review(1).docx" target="_blank">Open Word Document</a>
-        </details>
-      </div>
-
+      <h3>Artifacts to Attach or Link</h3>
+      <ul class="doc-link-list">
+        <li>
+          <a href="Analyze%20Your%20Own%20Formative%20Assessment%20Experience%20(1).docx" target="_blank">
+            Analyze Your Own Formative Assessment Experience
+            <span class="doc-note">Supports Instruction & Delivery, Assessment & Evaluation, Diversity & Inclusion, and Technology.</span>
+          </a>
+        </li>
+        <li>
+          <a href="Assignment%20Revising%20Instructions.docx" target="_blank">
+            Assignment Revising Instructions
+            <span class="doc-note">Supports Instruction & Delivery, Assessment & Evaluation, Diversity & Inclusion, and Curriculum Development.</span>
+          </a>
+        </li>
+        <li>
+          <a href="Alignment%20with%20Multiple-Choice%20Test%20Guidelines.docx" target="_blank">
+            Alignment with Multiple-Choice Test Guidelines
+            <span class="doc-note">Supports Assessment & Evaluation and Curriculum Development.</span>
+          </a>
+        </li>
+        <li>
+          <a href="Final%20Reflection_MatthewBespalko.docx" target="_blank">
+            Final Reflection
+            <span class="doc-note">Supports Indigenization & Reconciliation and Professionalism, Development & Mentorship.</span>
+          </a>
+        </li>
+        <li>
+          <a href="Applying%20Universal%20Design%20for%20Learning.docx" target="_blank">
+            Applying Universal Design for Learning
+            <span class="doc-note">Supports Diversity & Inclusion, Instruction & Delivery, and Professionalism, Development & Mentorship.</span>
+          </a>
+        </li>
+        <li>
+          <a href="Learning%20Technology%20Review.docx" target="_blank">
+            Learning Technology Review
+            <span class="doc-note">Supports Technology, Diversity & Inclusion, Instruction & Delivery, and Curriculum Development.</span>
+          </a>
+        </li>
+        <li>
+          <a href="instructor%20competency%20self%20rating.pdf" target="_blank">
+            Instructor Competency Self-Rating Document
+            <span class="doc-note">Framework document used to organize the portfolio around Saskatchewan Polytechnic instructor competencies.</span>
+          </a>
+        </li>
+      </ul>
       <div class="placeholder-box">
-        <strong>Additional placeholders:</strong> resume/CV, course syllabi, student feedback, anonymized student work, photos of labs, rubrics, professional development certificates, and reference letters.
+        <strong>Additional placeholders:</strong> resume/CV, course syllabi, student feedback, anonymized student work, photos of labs, rubrics, professional development certificates, reference letters.
       </div>
     </section>
   </main>
