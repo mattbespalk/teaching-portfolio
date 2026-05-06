@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html><head><link rel="stylesheet" href="https://templates.lcs.brightspace.com/lib/assets/css/styles.min.css"><link rel="stylesheet" href="/shared/sp-template/styles/SP-bootstrap-grid.css" data-override="override"></head><body style="color: rgb(32, 33, 34); font-family: verdana, sans-serif; font-size: 12px;"><h2 data-end="53" data-start="0"><strong data-end="53" data-start="4">Standing Waves and VSWR in Transmission Lines</strong></h2>
+<p data-end="239" data-start="54">When dealing with <strong data-end="97" data-start="72">RF transmission lines</strong>, standing waves and the <strong data-end="160" data-start="122">Voltage Standing Wave Ratio (VSWR)</strong> are key concepts that affect efficiency, power transfer, and signal integrity.&nbsp;</p>
+<p data-end="239" data-start="54">Below you will see a simulation of a transmission line working correctly.&nbsp;</p>
+<p><iframe src="https://www.falstad.com/circuit/circuitjs.html?ctz=CQAgjCCsCmC0YCZwAYB0DnIQdmwZmQA4EA2ATjOymSmqjjDACgxsJWSQEAWG7szjxo08cQiGyQQhYUwDu4bIN7gE4oSGTzV4vBkWc9shf2U1I3blxVaTAkEaiWH+rQCcnVjRauOakpgA3HRcaRHUbcBBeTFjzTQS0SCYgA" style="width: 100%; height: 400px;" allowfullscreen="allowfullscreen" webkitallowfullscreen="" mozallowfullscreen="" frameborder="0"></iframe></p>
+<p>You can see that the energy flows from the source to the load.&nbsp;</p>
+<hr data-end="244" data-start="241">
+<h2 data-end="292" data-start="246"><strong data-end="292" data-start="249">1. Standing Waves in Transmission Lines</strong></h2>
+<p data-end="608" data-start="293">A <strong data-end="312" data-start="295">standing wave</strong> occurs when a signal travelling down a transmission line encounters an impedance mismatch, causing part of the signal to be <strong data-end="449" data-start="436">reflected</strong> back toward the source. In the case below, a short. This reflection leads to interference between the forward (incident) and backward (reflected) waves, creating a standing wave pattern.</p>
+<p><iframe src="https://www.falstad.com/circuit/circuitjs.html?ctz=CQAgjOCmC0YEwjgOgGwA40HYUGYCcADCgCzEqYCsCFBIFdtFMYYAUGJhByuHgsXh5g+IWnBh4QOArTS0CrAO7g4aRJgTd1CBcoFCRFUrx1KQ+7XWNwNo1gCcVa4ZuwnRUmawDmV4paN-VTV5HydLeDVgjwUAJXCXEEF3Wi4aGQyZOhjRJAozQPdCm1MAe3NwHlpiAjw1egIkAjgGxAqcViA" style="width: 100%; height: 400px;" allowfullscreen="allowfullscreen" webkitallowfullscreen="" mozallowfullscreen="" frameborder="0"></iframe></p>
+<p><strong>Note:</strong><strong data-end="642" data-start="614"> </strong><em>The energy reflected is greater than the source energy.&nbsp;</em></p>
+<h3 data-end="642" data-start="610"><strong data-end="642" data-start="614">Causes of Standing Waves</strong></h3>
+<ul data-end="1163" data-start="643">
+<li data-end="831" data-start="643"><strong data-end="668" data-start="645">Impedance Mismatch:</strong> The most common cause of standing waves is when the characteristic impedance of the transmission line (<strong data-end="778" data-start="772">Z₀</strong>) does not match the impedance of the load (<strong data-end="829" data-start="822">Z_L</strong>).</li>
+<li data-end="964" data-start="832"><strong data-end="850" data-start="834">Reflections:</strong> When the wave reaches the load, a portion of it is transmitted, and the rest is reflected back toward the source.</li>
+<li data-end="1163" data-start="965"><strong data-end="989" data-start="967">Wave Interference:</strong> The forward and reflected waves interfere constructively and destructively at different points along the line, forming regions of high and low voltage (nodes and antinodes).</li>
+</ul>
+<p><iframe src="https://www.falstad.com/circuit/circuitjs.html?ctz=CQAgjCCsCmC0YCZwBYB0CDMkBsGMHZIAGfZSBSADiiKhqjjDACgx8ImkMlzruRaYONUIhsyAcwBO4RCH7j5SWoWYB3MRICc2WUh2SNvJVGy1+RdVATUDOWgcsz7Jl45CqAbppAHFFkCQwIhDQ2gRUSEDIgQFUIgxmAHNrW11jTljLNg45MGQJDILYoVgRKMUnPRQJRXyJFUgrRQQiakzW6ksjGxrTQWLu1MC2-pGu5m8W0brBwPAw0OioiKjaInjElONO4YQEBskc6op03tOS4Q8KhukTnB8LxuaJbkE5N8M9h5cnq2NPi5PpYpq9Wo8HuEFotwjFVllNslhoDenhdOtWOxqhhsNQAbjLmVrj4qpkcdR-ATBENFMh+Jk6cp-qiCUCqczqIyxlyqmy8WYQDzoSFJj4uZSuvNgjDlrL1ojtr0ucYCpKhr8fgLgcwAB4gWDIPgYcD4eS6CQHEAAWQAhgAXADGAAtdfrkLp8u0gpAIBaJAB5AAO0AAdq6DboLkxApAtILAhIAMpOgD2Ujt4bIZt0lLjfutAEsAM4AW3tzoAOkXmEA" style="width: 100%; height: 600px;" allowfullscreen="allowfullscreen" webkitallowfullscreen="" mozallowfullscreen="" frameborder="0"></iframe></p>
+<h3 data-end="1198" data-start="1165"><strong data-end="1198" data-start="1169">Note: </strong><em><strong>The open lines reflect in phase with the sources while the short reflects 180 degrees out of phase with t</strong>he source.</em>&nbsp;</h3>
+<p><strong data-end="1198" data-start="1169"><em></em></strong></p>
+<h3 data-end="1198" data-start="1165"><strong data-end="1198" data-start="1169">Effects of Standing Waves</strong></h3>
+<ul data-end="1480" data-start="1199">
+<li data-end="1282" data-start="1199"><strong data-end="1216" data-start="1201">Power Loss:</strong> Energy is not fully transmitted to the load, reducing efficiency.</li>
+<li data-end="1404" data-start="1283"><strong data-end="1307" data-start="1285">Signal Distortion:</strong> Reflected waves can interfere with the original signal, causing errors in communication systems.</li>
+<li data-end="1480" data-start="1405"><strong data-end="1428" data-start="1407">Component Damage:</strong> High voltage peaks can stress or damage components.</li>
+</ul>
+<hr data-end="1485" data-start="1482">
+<h2 data-end="1531" data-start="1487"><strong data-end="1531" data-start="1490">2. Voltage Standing Wave Ratio (VSWR)</strong></h2>
+<p data-end="1752" data-start="1532"><strong data-end="1570" data-start="1532">VSWR (Voltage Standing Wave Ratio)</strong> is a measure of how well power is transmitted through a transmission line. It quantifies the severity of standing waves by comparing the maximum and minimum voltages along the line.</p>
+<h3 data-end="1774" data-start="1754"><strong data-end="1774" data-start="1758">VSWR Formula</strong></h3>
+<h3 data-end="1774" data-start="1754">&nbsp;Calculate VSWR is using the <strong data-end="1995" data-start="1969">reflection coefficient</strong> (<math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Γ</mi></mrow><annotation encoding="application/x-tex" data-d2l-attr-encoding="application/x-tex">\Gamma</annotation></semantics></math><span aria-hidden="true"></span>):</h3>
+<ul data-end="1924" data-start="1821"></ul>
+<p style="text-align: justify;"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>V</mi><mi>S</mi><mi>W</mi><mi>R</mi><mo>=</mo><mfrac><mrow><mn>1</mn><mo>+</mo><mi mathvariant="normal">∣</mi><mi mathvariant="normal">Γ</mi><mi mathvariant="normal">∣</mi></mrow><mrow><mn>1</mn><mo>−</mo><mi mathvariant="normal">∣</mi><mi mathvariant="normal">Γ</mi><mi mathvariant="normal">∣</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex" data-d2l-attr-encoding="application/x-tex">VSWR = \frac{1 + |\Gamma|}{1 - |\Gamma|}</annotation></semantics></math>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; where:</p>
+<p style="text-align: center;"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Γ</mi><mo>=</mo><mfrac><mrow><msub><mi>Z</mi><mi>L</mi></msub><mo>−</mo><msub><mi>Z</mi><mn>0</mn></msub></mrow><mrow><msub><mi>Z</mi><mi>L</mi></msub><mo>+</mo><msub><mi>Z</mi><mn>0</mn></msub></mrow></mfrac></mrow><annotation encoding="application/x-tex" data-d2l-attr-encoding="application/x-tex">\Gamma = \frac{Z_L - Z_0}{Z_L + Z_0}</annotation></semantics></math><span aria-hidden="true">​​</span> (Reflection Coefficient)</p>
+<h3 data-end="2160" data-start="2135"><strong data-end="2160" data-start="2139">Interpreting VSWR</strong></h3>
+<table data-end="2602" data-start="2161">
+<thead data-end="2208" data-start="2161">
+<tr data-end="2208" data-start="2161">
+<th data-end="2173" data-start="2161"><strong data-end="2171" data-start="2163">VSWR</strong></th>
+<th data-end="2190" data-start="2173"><strong data-end="2189" data-start="2175">Reflection</strong></th>
+<th data-end="2208" data-start="2190"><strong data-end="2206" data-start="2192">Efficiency</strong></th>
+</tr>
+</thead>
+<tbody data-end="2602" data-start="2254">
+<tr data-end="2319" data-start="2254">
+<td><strong data-end="2263" data-start="2256">1:1</strong></td>
+<td>No reflection</td>
+<td>Perfect match, full power transfer</td>
+</tr>
+<tr data-end="2384" data-start="2320">
+<td><strong data-end="2331" data-start="2322">1.5:1</strong></td>
+<td>Small reflection</td>
+<td>Good match, minor power loss</td>
+</tr>
+<tr data-end="2449" data-start="2385">
+<td><strong data-end="2394" data-start="2387">2:1</strong></td>
+<td>Moderate reflection</td>
+<td>Acceptable, often tolerated</td>
+</tr>
+<tr data-end="2518" data-start="2450">
+<td><strong data-end="2460" data-start="2452">&gt;2:1</strong></td>
+<td>Significant reflection</td>
+<td>Poor match, high power loss</td>
+</tr>
+<tr data-end="2602" data-start="2519">
+<td><strong data-end="2537" data-start="2521">∞ (infinity)</strong></td>
+<td>Total reflection</td>
+<td>No power transfer (open or short circuit)</td>
+</tr>
+</tbody>
+</table>
+<p><strong data-end="2695" data-start="2612"></strong></p>
+<p><iframe src="https://www.falstad.com/circuit/circuitjs.html?ctz=CQAgjOCmC0YEwjgdgHROXOAOALAVjgGYxDCBOLEPABiqtrxjDACgwkJ2A2cMhHMjzB8QtODDIhC1WllrUWAd3DZE6cEh4ZRSkAKEi8OHLwQLl+tQiMntCgE4rKwhN1OipMlgHMqxq362WJTyPk4B8JTYIToASuEuIILutJw0MhkydPKiKHgsjjYBRYliNCw41IR6lIRwtFzUtbgeOAD6XO3UbfBwZN1waBjoI8NwXFxt1CgZYG2wbXBt7YRtAMoA9gCu9gDGkAA6AM4VVTVSLY2UxjFYHV09mP2LKGOj73B4UzMycwtLd1WABkNgBDAAmLEIlEoADEIDkwBkQLAQLFIEcAJZHAAuoIAdvsWEA" style="width: 100%; height: 400px;" allowfullscreen="allowfullscreen" webkitallowfullscreen="" mozallowfullscreen="" frameborder="0"></iframe></p>
+<p>Adjust the<strong data-end="3048" data-start="2998"> Resistance slider to change the impedance of the load. Pay close attention to the change in amplitude of the source and load signals.</strong><strong data-end="3048" data-start="2998"></strong></p>
+<h2 data-end="2695" data-start="2609"><strong data-end="2695" data-start="2612">3. Relationship Between Standing Waves, VSWR, and Transmission Line Performance</strong></h2>
+<ul data-end="2988" data-start="2696">
+<li data-end="2776" data-start="2696"><strong data-end="2776" data-start="2698">Higher VSWR means more standing waves and worse power transfer efficiency.</strong></li>
+<li data-end="2860" data-start="2777"><strong data-end="2860" data-start="2779">A perfect match (VSWR = 1:1) means no standing waves and full power transfer.</strong></li>
+<li data-end="2988" data-start="2861"><strong data-end="2988" data-start="2863">In practical systems, a VSWR below 2:1 is usually acceptable, while higher values indicate a need for impedance matching.</strong></li>
+</ul>
+<h2 data-end="3048" data-start="2995"><strong data-end="3048" data-start="2998">4. Minimizing Standing Waves and Reducing VSWR</strong></h2>
+<ul data-end="3527" data-start="3049">
+<li data-end="3193" data-start="3049"><strong data-end="3074" data-start="3051">Impedance Matching:</strong> Use matching networks (LC circuits, transformers, or quarter-wave matching sections) to match <math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Z</mi><mi>L</mi></msub></mrow><annotation encoding="application/x-tex" data-d2l-attr-encoding="application/x-tex">Z_L</annotation></semantics></math><span aria-hidden="true">​</span> and <math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Z</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex" data-d2l-attr-encoding="application/x-tex">Z_0</annotation></semantics></math><span aria-hidden="true">​</span>.</li>
+<li data-end="3308" data-start="3194"><strong data-end="3219" data-start="3196">Proper Termination:</strong> Ensure the load impedance matches the characteristic impedance of the transmission line.</li>
+<li data-end="3422" data-start="3309"><strong data-end="3334" data-start="3311">Quality Components:</strong> Use transmission lines, connectors, and terminations designed for your frequency range.</li>
+<li data-end="3527" data-start="3423"><strong data-end="3445" data-start="3425">Tuning Antennas:</strong> Adjust antennas for resonance at the operating frequency to minimize reflections.</li>
+</ul>
+<h3 data-end="3559" data-start="3534"><strong data-end="3559" data-start="3538">Practical Example</strong></h3>
+<p data-end="3964" data-start="3560">If you are setting up an <strong data-end="3624" data-start="3585">RF transmitter with a coaxial cable</strong> and an <strong data-end="3643" data-start="3632">antenna</strong>, but the antenna impedance is 50Ω while your coax is 75Ω, a mismatch occurs. This results in a <strong data-end="3764" data-start="3739">VSWR greater than 1:1</strong>, causing reflections, reduced transmission power, and possible damage to the transmitter. To fix this, you would use an <strong data-end="3915" data-start="3885">impedance-matching network</strong> or a <strong data-end="3930" data-start="3921">balun</strong> to achieve better power transfer.</p>
+<p data-is-last-node="" data-end="4048" data-start="3966"></p></body></html>
